@@ -24,7 +24,7 @@ Fichier de configuration. On ajoute 2 dépendances depuis le site <a href="https
 
 Conteneur (fichier de configuration), permet d'instancier les objets créés dans **App.java** (voir plus bas) en allant récupérer les beans enregistrés.
 
-Il y a 4 façons d'instancier un objet *via* le conteneur. La 1ère passe par les setters :
+Il y a plusieurs façons d'injecter une dépendance *via* le conteneur. La 1ère passe **par les setters** :
 
     <bean id="personne1"
     class="m2i.formation.personne_spring.Personne">
@@ -34,7 +34,7 @@ Il y a 4 façons d'instancier un objet *via* le conteneur. La 1ère passe par le
         <property name="_nbEnfants" value="1" />
     </bean>
 
-Instanciation par constructeur (notez qu'il n'y a pas besoin de compléter les paramètres dans l'ordre fixé par le constructeur. On peut les mettre dans n'importe quel ordre, tant qu'on précise la position du paramètre avec l'attribut **index**) :
+Injection **par constructeur** (notez qu'il n'y a pas besoin de compléter les paramètres dans l'ordre fixé par le constructeur. On peut les mettre dans n'importe quel ordre, tant qu'on précise la position du paramètre avec l'attribut **index**) :
 
     <bean id="personne2"
     class="m2i.formation.personne_spring.StaticPersonneFactory"
@@ -45,7 +45,7 @@ Instanciation par constructeur (notez qu'il n'y a pas besoin de compléter les p
         <constructor-arg index="2" value="2106.7" />
     </bean>
 
-Instanciation par la fabrique statique (*object factory*). Cette méthode sollicite l'interface *StaticEmployeFactory* (voir plus bas) :
+Injection par la **fabrique statique** (*object factory*). Cette méthode sollicite l'interface *StaticEmployeFactory* (voir plus bas) :
 
     <bean id="personne3"
     class="m2i.formation.personne_spring.StaticEmployeFactory"
@@ -56,7 +56,7 @@ Instanciation par la fabrique statique (*object factory*). Cette méthode sollic
         <constructor-arg value="4" />
     </bean>
 
-Instanciation par fabrique non statique (sollicite l'interface *NonStaticEmployeFactory*, voir plus bas) :
+Injection par **fabrique non statique** (sollicite l'interface *NonStaticEmployeFactory*, voir plus bas) :
 
     <bean id="personneFactory"
     class="m2i.formation.personne_spring.NonStaticEmployeFactory" />
