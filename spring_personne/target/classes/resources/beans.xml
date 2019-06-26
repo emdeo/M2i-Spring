@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Instanciation par les SETTERS -->
+	<bean id="personne1"
+		class="m2i.formation.personne_spring.Personne">
+		<property name="_nom" value="Alpha" />
+		<property name="_prenom" value="Alice" />
+		<property name="_salaire" value="1164.97" />
+		<property name="_nbEnfants" value="1" />
+	</bean>
+
+	<!-- Instanciation par CONSTRUCTEUR -->
+	<bean id="personne2"
+		class="m2i.formation.personne_spring.StaticPersonneFactory"
+		factory-method="getPersonne">
+		<constructor-arg index="3" value="0" />
+		<constructor-arg index="0" value="Bravo" />
+		<constructor-arg index="1" value="Bernard" />
+		<constructor-arg index="2" value="2106.7" />
+	</bean>
+
+	<!-- Instanciation par la FABRIQUE STATIQUE (object factory) -->
+	<bean id="personne3"
+		class="m2i.formation.personne_spring.StaticEmployeFactory"
+		factory-method="getPersonne">
+		<constructor-arg value="Charly" />
+		<constructor-arg value="Carole" />
+		<constructor-arg value="3470.81" />
+		<constructor-arg value="4" />
+	</bean>
+
+	<!-- Instanciation par la FABRIQUE NON STATIQUE -->
+	<bean id="personneFactory"
+		class="m2i.formation.personne_spring.NonStaticEmployeFactory" />
+
+	<bean id="personne4"
+		class="m2i.formation.personne_spring.StaticPersonneFactory"
+		factory-method="getPersonne" factory-bean="personneFactory">
+		<constructor-arg value="Delta" />
+		<constructor-arg value="Didier" />
+		<constructor-arg value="4257.3" />
+		<constructor-arg value="3" />
+	</bean>
+
+</beans>
