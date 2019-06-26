@@ -6,7 +6,7 @@ Objectif : enregistrer des objets **Employe** dont on souhaite connaître le mon
 
 ### Fichier pom.xml
 
-Fichier de configuration. On ajoute 2 dépendances depuis le site <a href="https://mvnrepository.com/artifact/org.springframework">Maven Repository</a> afin de pouvoir utiliser les bibliothèques **Context** et **Core**.
+Fichier de configuration. On ajoute 2 dépendances depuis le site <a href="https://mvnrepository.com/artifact/org.springframework">MVN Repository</a> afin de pouvoir utiliser les bibliothèques **Context** et **Core**.
 
     <dependency>
         <groupId>org.springframework</groupId>
