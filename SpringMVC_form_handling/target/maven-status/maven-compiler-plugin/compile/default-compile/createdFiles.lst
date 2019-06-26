@@ -1,0 +1,4 @@
+m2i\formation\config\SpringMvcDispatcherServletInitializer.class
+m2i\formation\controller\SignUpController.class
+m2i\formation\model\SignUpForm.class
+m2i\formation\config\MVCConfig.class
