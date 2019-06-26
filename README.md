@@ -45,7 +45,7 @@ Injection **par constructeur** (notez qu'il n'y a pas besoin de compléter les p
         <constructor-arg index="2" value="2106.7" />
     </bean>
 
-Injection par la **fabrique statique** (*object factory*). Cette méthode sollicite l'interface *StaticEmployeFactory* (voir plus bas) :
+Injection **par la fabrique statique** (*object factory*). Cette méthode sollicite la classe *StaticEmployeFactory* (voir plus bas) :
 
     <bean id="personne3"
     class="m2i.formation.personne_spring.StaticEmployeFactory"
@@ -56,7 +56,7 @@ Injection par la **fabrique statique** (*object factory*). Cette méthode sollic
         <constructor-arg value="4" />
     </bean>
 
-Injection par **fabrique non statique** (sollicite l'interface *NonStaticEmployeFactory*, voir plus bas) :
+Injection **par fabrique non statique** (sollicite la classe *NonStaticEmployeFactory*, voir plus bas) :
 
     <bean id="personneFactory"
     class="m2i.formation.personne_spring.NonStaticEmployeFactory" />
